@@ -1,0 +1,494 @@
+@font-face {
+  font-family: "helvetica";
+  font-weight: 100;
+  src: url(fonts/helvetica-oblique.woff) format("woff");
+}
+
+@font-face {
+  font-family: "helvetica";
+  font-weight: 200;
+  src: url(fonts/helvetica-bold-oblique.woff) format("woff");
+}
+
+@font-face {
+  font-family: "terminal";
+  font-weight: 100;
+  src: url(fonts/terminal.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "terminal2";
+  font-weight: 200;
+  src: url(fonts/terminal2.woff2) format("woff2");
+}
+
+/* ===== בסיס ===== */
+
+body {
+  margin: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  background-color: #f3f1e4;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.active {
+  font-weight: bold;
+  color: red;
+}
+
+/* ===== וידאו / פתיחה ===== */
+
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.welcome-gif {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1500px;
+}
+
+@media (max-width: 600px) {
+  .welcome-gif {
+    width: 90vw;
+    max-width: 500px;
+  }
+}
+
+/* ===== כותרות ===== */
+
+h1 {
+  font-family: "helvetica";
+  font-weight: 100;
+  margin: 0;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(70px, 6vw, 80px);
+  color: black;
+  margin-bottom: 40px;
+}
+
+h2 {
+  font-family: "terminal";
+  margin-top: 40px;
+  margin-left: 40px;
+  font-size: clamp(30px, 5vw, 50px);
+  padding-top: 5px;
+}
+
+h3 {
+  font-family: "terminal2";
+  font-size: 20px;
+}
+
+h4 {
+  font-family: "helvetica";
+  font-weight: 100;
+  font-size: 35px;
+}
+
+.english,
+.en {
+  direction: ltr;
+  text-align: left;
+}
+
+/* ===== וידאו כותרת עמודים ===== */
+
+.contact-title-video {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  width: 250px;
+  height: auto;
+}
+
+/* ===== נקודת בית ===== */
+
+.home-dot {
+  position: fixed;
+  top: 60px;
+  right: 40px;
+
+  width: 20px;
+  height: 20px;
+  background-color: black;
+  border-radius: 50%;
+
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* ===== תוכן מרכזי ===== */
+
+.content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  padding-top: 40vh;
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===== Contact ===== */
+
+.contact-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+  font-family: "terminal2";
+  font-weight: 200;
+
+  direction: ltr;
+}
+@media (max-width: 600px) {
+  .contact-text {
+    width: 90%;
+    padding: 0 16px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+
+/* ===== About ===== */
+.about {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 130px 20px 120px 20px;
+
+  text-align: left;
+  line-height: 1.6;
+}
+
+.about h4 {
+  margin: 0;
+
+  font-family: "terminal2";
+  font-size: 26px;
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .about {
+    max-width: 80%;
+    padding: 120px 16px 120px 16px;
+  }
+
+  .about h4 {
+    font-size: 22px;
+    line-height: 1.5;
+  }
+}
+/* ===== My Projects רשימה ===== */
+
+.category-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 140px 0 0 0;
+}
+
+.category-list li {
+  font-family: "terminal";
+  font-weight: 200;
+  font-size: clamp(30px, 5vw, 40px);
+  margin-bottom: clamp(8px, 2vw, 16px);
+  margin-left: 40px;
+}
+
+.category-list a {
+  display: inline-block;
+  color: black;
+  text-decoration: none;
+  transition: none;
+}
+
+.category-list a:hover {
+  opacity: 0.6;
+  color: rgb(0, 34, 255);
+  transform: scale(1.1);
+}
+
+/* ===== לינקים עם קו אדום גלי: my projects / Instagram ===== */
+
+.text-link {
+  display: inline-block;
+  color: black;
+
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: red;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 4px;
+
+  transition: none;
+}
+
+.text-link:hover {
+  opacity: 0.6;
+  color: rgb(0, 34, 255);
+  transform: scale(1.1);
+}
+
+/* אם עדיין יש קישורים עם class="red-underline" */
+.red-underline {
+  display: inline-block;
+  color: black;
+
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: red;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 4px;
+
+  transition: none;
+}
+
+.red-underline:hover {
+  opacity: 0.6;
+  color: rgb(0, 34, 255);
+  transform: scale(1.1);
+}
+.bottom-menu {
+  font-family: "terminal";
+  font-weight: 100;
+
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  gap: 24px;
+  white-space: nowrap;
+
+  background: #f3f1e4; /* צבע פנימי כמו הרקע של העמוד */
+  border: 2px solid rgb(0, 34, 255); /* הקו מסביב */
+
+  padding: 10px 18px;
+  border-radius: 20px;
+  z-index: 1000;
+}
+
+.bottom-menu a {
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  font-size: clamp(14px, 2vw, 18px);
+  transition: none;
+}
+
+.bottom-menu a:hover {
+  opacity: 0.6;
+  color: rgb(0, 34, 255);
+  transform: scale(1.1);
+}
+/* מובייל - תפריט תחתון */
+@media (max-width: 600px) {
+  .bottom-menu a {
+    font-size: 18px;
+  }
+}
+
+.image-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+
+  padding: 100px;
+  margin-top: 100px;
+
+  direction: ltr;
+}
+
+.project-card {
+  background-color: #dbdcd1;
+  padding: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 380px;
+
+  text-decoration: none;
+}
+
+.project-card img,
+.project-card video {
+  max-width: 100%;
+  max-height: 330px;
+
+  width: auto;
+  height: auto;
+
+  object-fit: contain;
+  display: block;
+}
+
+.project-card:hover {
+  background-color: #2A84FF;
+}
+
+@media (max-width: 600px) {
+  .image-row {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    overflow-x: hidden;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .image-row img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+}
+
+/* ===== עמודי פרויקט ===== */
+
+.abba01 {
+  width: 50%;
+  max-width: 300px;
+  display: block;
+  margin: 0 auto;
+  padding: 140px;
+}
+.image-text {
+  display: flex;
+  flex-direction: column; /* תמונה מעל טקסט */
+  align-items: center;
+  justify-content: center;
+
+  gap: 40px;
+  margin: 100px auto 120px auto;
+
+  text-align: left;
+  direction: ltr;
+}
+
+.image-text img {
+  width: 500px;
+  max-width: 100%;
+  height: auto;
+
+  margin: 0;
+  display: block;
+}
+
+.poster {
+  width: 300px;
+  max-width: 100%;
+  height: auto;
+
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.poster:hover {
+  transform: scale(1.2);
+}
+
+.project-text {
+  max-width: 700px;
+  width: 80%;
+  text-align: center;
+}
+
+.paragraph {
+  font-family: "terminal";
+  font-weight: 100;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+  .image-text {
+    gap: 24px;
+    margin: 80px auto 100px auto;
+    padding: 0 20px;
+  }
+
+  .image-text img,
+  .poster {
+    width: 280px;
+  }
+
+  .project-text {
+    width: 100%;
+    max-width: 90%;
+  }
+
+  .paragraph {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .image-text {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 12px;
+    gap: 12px;
+  }
+
+  .image-text img {
+    margin-top: 50px;
+    margin-right: 0;
+    width: 300px;
+  }
+
+  .project-text {
+    max-width: 90%;
+    margin: 40px;
+    padding: 0 12px 80px 12px;
+  }
+
+  .project-text h3 {
+    margin-top: 0;
+    font-size: 16px;
+  }
+
+  .project-text .paragraph {
+    font-size: 14px;
+    margin-top: 8px;
+  }
+}
+
+.project-img {
+  width: 600px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  margin-top: 200px ;
+}
