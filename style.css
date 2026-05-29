@@ -110,14 +110,6 @@ h4 {
 
 /* ===== וידאו כותרת עמודים ===== */
 
-.contact-title-video {
-  position: absolute;
-  top: 5px;
-  left: 10px;
-  width: 250px;
-  height: auto;
-  z-index: 0;
-}
 
 /* ===== נקודת בית ===== */
 
@@ -569,4 +561,69 @@ h4 {
   display: block;
   margin: 0 auto;
   margin-top: 200px ;
+}
+
+.contact-title-video {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  width: 250px;
+  height: auto;
+  z-index: 0;
+
+  pointer-events: none;
+  user-select: none;
+}
+
+.my-video {
+  width: 250px;
+  height: auto;
+  display: block;
+}
+
+.bottom-menu {
+  font-family: "terminal";
+  font-weight: 100;
+
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  gap: 24px;
+  white-space: nowrap;
+
+  background: #F3F3E7;
+  border: 2px solid rgb(0, 34, 255);
+
+  padding: 10px 18px;
+  border-radius: 20px;
+  z-index: 1000;
+}
+
+.bottom-menu a {
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  font-size: clamp(14px, 2vw, 18px);
+  font-weight: 100;
+  transition: none;
+}
+
+.bottom-menu a:hover {
+  opacity: 0.6;
+  color: rgb(0, 34, 255);
+  transform: scale(1.1);
+}
+
+.bottom-menu a.active {
+  font-weight: bold;
+  color: rgb(0, 34, 255);
+}
+
+@media (max-width: 600px) {
+  .bottom-menu a {
+    font-size: 18px;
+  }
 }
